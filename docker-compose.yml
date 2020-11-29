@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  broadlink-mqtt:
+    image: gelse/broadlink-mqtt
+    container_name: broadlink-mqtt
+    volumes:
+      - ./commands:/app/commands
+      - ./modules:/app/modules
+    env_file:
+      - config.env
+    restart: unless-stopped
